@@ -1,0 +1,311 @@
+/* Make sure the body and HTML span the full height */
+html, body {
+    height: 100%; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0e0e0e, #e0b3ff); /* Soft Black to Light Purple Gradient */
+    color: #f0f0f0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    font-size: 16px;
+    height: 100%; /* Full height */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .logo img {
+    width: 90px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #d2d1d3;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #9863ed;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Particle background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Allow space for content to grow */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100%; /* Ensures the container spans full height */
+    padding-bottom: 40px; /* Make space for the map at the bottom */
+    margin-top: 50px;
+}
+
+.contact-section {
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-out;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 40px; /* Add space for the map section */
+}
+
+.headline {
+    font-size: 3em;
+    color: #e0b3ff; /* Light Purple */
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: bounce 1s infinite alternate;
+}
+
+.subheading {
+    font-size: 1.6em;
+    opacity: 0.8;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 15px;
+    padding: 30px;
+    width: 22%;
+    text-align: center;
+    transition: transform 1s, box-shadow 1s;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.info-card:hover {
+    transform: translateY(-12px); /* Hover animation */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+    font-size: 50px;
+    color: #e0b3ff; /* Light Purple */
+    margin-bottom: 15px;
+    transition: transform 0.4s, color 0.4s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+p a {
+    color: #e0b3ff; /* Light Purple */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #d28bff; /* Lighter purple when hovered */
+    text-decoration: underline;
+}
+
+.contact-button {
+    background: linear-gradient(135deg, #e0b3ff, #d28bff); /* Elegant gradient with light purple */
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #d28bff, #e0b3ff);
+}
+
+.map-section {
+    background: #121212;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.map {
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 5px solid #9c4bff;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 400px; /* Ensure the map is visible */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .info-card {
+        width: 48%; /* Stacking cards for smaller screens */
+    }
+
+    .headline {
+        font-size: 2.8em;
+    }
+
+    .contact-button {
+        font-size: 1.1em;
+        padding: 14px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        width: 48%; /* Stacking cards for smaller screens */
+    }
+
+    .headline {
+        font-size: 2.5em;
+    }
+
+    .contact-button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    .map {
+        width: 100%; /* Ensure map is full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .info-card {
+        width: 100%;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+
+    .headline {
+        font-size: 2em;
+    }
+
+    .contact-button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    iframe {
+        height: 300px; /* Reduce map size on very small screens */
+    }
+}

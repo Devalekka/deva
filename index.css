@@ -1,0 +1,275 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: #f9f4f4;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .logo img {
+    width: 90px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #d2d1d3;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #9863ed;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('3image.jpg') center/cover no-repeat;
+    position: relative;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 5em; /* Large for bold impact */
+    color: #151216; /* Deep purple to complement your background */
+    font-family: 'fantasy';
+    letter-spacing: 3px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content p {
+    font-size: 2.2em; /* Slightly larger to stand out */
+    margin: 20px 0;
+    font-family: 'Pacifico', cursive;
+    color: #26043d; /* Soft light purple */
+    animation: fadeIn 2s ease-out;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #0d0c0a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2e271c;
+    transform: scale(1.05);
+}
+
+/* Section Styling */
+.section {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #181818;
+    color: #ccc;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+
+/* Tablet Screen (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 20px;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default for mobile */
+        flex-direction: column;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.8em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+    }
+}
+
+/* Mobile Screen (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Navbar for Mobile */
+.nav-links.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-links.mobile-menu li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.hamburger {
+    display: flex; /* Show hamburger menu on small screens */
+}
+
+@media (max-width: 768px) {
+    .map-section iframe {
+        height: 300px; /* Reduce map height for smaller screens */
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+
+    .info-card {
+        width: 48%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 1.8em;
+    }
+
+    .info-card {
+        width: 100%; /* Full width for small screens */
+    }
+
+    .map-section iframe {
+        height: 250px; /* Further reduce map height */
+    }
+
+    .navbar .logo span {
+        font-size: 1em; /* Adjust logo font size */
+    }
+}
